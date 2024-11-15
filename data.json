@@ -1,0 +1,25 @@
+{
+    "userAdjectives" : [
+        "Valued", "Loyal", "Esteemed", "Honored", "Appreciated",
+        "Dedicated", "Incredible", "Trusted", "Cherished", "Exceptional",
+        "Wonderful", "Outstanding", "Treasured", "Amazing", "Respected",
+        "Dependable", "Reliable", "Inspiring", "Dynamic", "Admirable",
+        "Impressive", "Unique", "Creative", "Supportive", "Generous",
+        "Remarkable", "Appreciative", "Influential", "Innovative", "Ambitious",
+        "Resourceful", "Dedicated", "Brilliant", "Motivated", "Courageous",
+        "Driven", "Skilled", "Talented", "Hardworking", "Visionary",
+        "Grateful", "Proactive", "Focused", "Patient", "Empowered"
+    ],
+    "userNouns" : [
+        "Partner", "Guest", "Supporter", "Patron", "Advocate",
+        "Friend", "Client", "Buddy", "Benefactor", "Member",
+        "Collaborator", "Champion", "Hero", "Contributor", "Captain",
+        "VIP", "Explorer", "Enthusiast", "Guide", "Pioneer",
+        "Investor", "Advisor", "Specialist", "Innovator", "Seniorman",
+        "Chief", "Investor", "Mover", "Shaker", "Creator",
+        "Bigman", "Leader", "Influencer", "Customer", "Odogwu",
+        "Hero", "Expert", "Ambassador", "Achiever", "Fan",
+        "Patron", "Sponsor", "Champ", "User", "Oga",
+        "Chairman", "Boss", "Seeker", "Searcher", "Legend"
+    ]
+}
