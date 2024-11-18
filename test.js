@@ -8,4 +8,5 @@ const {
 }
  = require('./userlab');
 
-console.log(generateRandom());
+// console.log(generateRandom());
+console.log(generateUniqueUsername());

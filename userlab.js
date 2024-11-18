@@ -94,17 +94,48 @@ function generateUser() {
     //         console.error("Error reading data.json:", error.message);
     //     });
     
-            
+                
     
-    // // Example usage
+
     // console.log(generateUser());
-    // console.log(generateUniqueUsername(generateRandom()));
+    console.log(generateUniqueUsername(generateRandom()));
     // console.log(generateUniqueUsername(generateUser()));
     // // console.log(readArray());
+
+
+
+
+    // Read the JSON file
+    // fs.readFile('data.json', 'utf8', (err, data) => {
+    //     if (err) {
+    //         console.error('Error reading the file:', err);
+    //         return;
+    //     }
     
+    //     // Parse the JSON data
+    //     const jsonData = JSON.parse(data);
+    //     const nouns = jsonData.userNouns;
+    //     const adjectives = jsonData.userAdjectives;
+    
+        
 
+        // A function that concatenates the two array items
+    //     function generateRandom() {
+    //     // Get a random item from the array
+    //     const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
+    //     const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+    //     // const randomUsername = `${randomAdjective}_${randomNoun}`;
+    //     const randomNumberTo20 = numberArrayTo20[Math.floor(Math.random() * numberArrayTo20.length)];
+    //     const randomNumber = numberArray[Math.floor(Math.random() * numberArray.length)];  
+    
+    //     return 
+    // }
+    // });
 
-
+        // Output the random item
+        // console.log(concatenateItems(randomAdjective, randomNoun));
+    
+    console.log(generateUser());
 
 
 // Export the functions so they can be used in other files
