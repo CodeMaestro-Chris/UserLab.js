@@ -1,12 +1,17 @@
 const {
-    numberArray,
-    oddNumbers,
-    evenNumbers,
-    generateRandom,
-    generateUser,
+    generateRandomName,
+    generateRandomUser,
+    generateFormalName,
+    generateUniquePro,
+    generateProName,
     generateUniqueUsername
 }
  = require('./userlab');
 
-// console.log(generateRandom());
-console.log(generateUniqueUsername());
+
+// console.log(generateRandomName());
+// console.log(generateRandomUser());
+// console.log(generateFormalName());
+console.log(generateProName());
+// console.log(generateUniquePro());
+// console.log(generateUniqueUsername(generateFormalName()));

@@ -1,5 +1,5 @@
 {
-    "userAdjectives" : [
+    "Adjectives" : [
         "Valued", "Loyal", "Esteemed", "Honored", "Appreciated",
         "Dedicated", "Incredible", "Trusted", "Cherished", "Exceptional",
         "Wonderful", "Outstanding", "Treasured", "Amazing", "Respected",
@@ -10,7 +10,7 @@
         "Driven", "Skilled", "Talented", "Hardworking", "Visionary",
         "Grateful", "Proactive", "Focused", "Patient", "Empowered"
     ],
-    "userNouns" : [
+    "Nouns" : [
         "Partner", "Guest", "Supporter", "Patron", "Advocate",
         "Friend", "Client", "Buddy", "Benefactor", "Member",
         "Collaborator", "Champion", "Hero", "Contributor", "Captain",
@@ -21,5 +21,18 @@
         "Hero", "Expert", "Ambassador", "Achiever", "Fan",
         "Patron", "Sponsor", "Champ", "User", "Oga",
         "Chairman", "Boss", "Seeker", "Searcher", "Legend"
-    ]
+    ],
+    "Professions" : [
+        "Accountant", "Architect", "Artist", "Astronomer", "Biologist", 
+        "Business_Analyst", "Carpenter", "Chef", "Civil_Engineer", "Content_Writer", 
+        "Data_Scientist", "Dentist", "Doctor", "Electrical_Engineer", "Entrepreneur", 
+        "Farmer", "Fashion_Designer", "Firefighter", "Graphic_Designer", "Journalist", 
+        "Judge", "Lawyer", "Librarian", "Mechanical_Engineer", "Nurse", 
+        "Painter", "Photographer", "Pilot", "Plumber", "Police_Officer", 
+        "Politician", "Psychologist", "Research_Scientist", "Software_Developer", 
+        "Teacher", "Translator", "Veterinarian", "Video Editor", "Web_Developer", 
+        "Writer", "Zoologist", "Banker", "Choreographer", "Environmental_Scientist", 
+        "Event_Planner", "Historian", "IT_Specialist", "Logistician", 
+        "Marketing_Manager", "Musician", "Pharmacist", "Real_Estate_Agent"
+      ]
 }

@@ -1,149 +1,240 @@
-const fs = require("fs")
+// Imports arrays from data.json file
+const data = require("./data.json"); 
 
 
-// An array of numbers from 1 to 100
-const numberArray = Array.from({ length: 100}, (_, i) => i + 1);
+/**
+ * An array of Nouns imported from data.json file
+ */
+const userNouns = data.Nouns;  // Reads the items in noun array from data.json file
 
-// An array of numbers from 1 to 20
-const numberArrayTo20 = Array.from({ length: 20 }, (_, i) => i + 1);  // 21 to 40
+/**
+ * An array of Adjectives imported from data.json file
+ */
+const userAdjectives = data.Adjectives;  // Reads the items in adjective array from data.json file
 
-// An array of even
-const evenNumbers = Array.from({ length: 50 }, (_, i) => i * 2 + 2); 
+/**
+ * An array of Professions imported from data.json file
+ */
+ const userProfessions = data.Professions;  // Reads the items in profession array from data.json file
 
-// An array of odd numbers
-const oddNumbers = numberArray.filter(number => number % 2 !== 0); 
+/**
+ * An array of numbers from 1-100
+ */
+const numberArray = Array.from({ length: 100}, (_, i) => i + 1);  // An array of numbers from 1 to 100
 
-// An array of username (nouns)
-const userNouns = [
-    "Partner", "Guest", "Supporter", "Patron", "Advocate",
-    "Friend", "Client", "Buddy", "Benefactor", "Member",
-    "Collaborator", "Champion", "Hero", "Contributor", "Captain",
-    "VIP", "Explorer", "Enthusiast", "Guide", "Pioneer",
-    "Investor", "Advisor", "Specialist", "Innovator", "Seniorman",
-    "Chief", "Investor", "Mover", "Shaker", "Creator",
-    "Bigman", "Leader", "Influencer", "Customer", "Odogwu",
-    "Hero", "Expert", "Ambassador", "Achiever", "Fan",
-    "Patron", "Sponsor", "Champ", "User", "Oga",
-    "Chairman", "Boss", "Seeker", "Searcher", "Legend"
-];
+/**
+ * An array of numbers from 1-20
+ */
+const numberArrayTo20 = Array.from({ length: 20 }, (_, i) => i + 1); // An array of numbers from 1 to 20
 
-// An array of username (adjectives)
-const userAdjectives = [
-    "Valued", "Loyal", "Esteemed", "Honored", "Appreciated",
-    "Dedicated", "Incredible", "Trusted", "Cherished", "Exceptional",
-    "Wonderful", "Outstanding", "Treasured", "Amazing", "Respected",
-    "Dependable", "Reliable", "Inspiring", "Dynamic", "Admirable",
-    "Impressive", "Unique", "Creative", "Supportive", "Generous",
-    "Remarkable", "Appreciative", "Influential", "Innovative", "Ambitious",
-    "Resourceful", "Dedicated", "Brilliant", "Motivated", "Courageous",
-    "Driven", "Skilled", "Talented", "Hardworking", "Visionary",
-    "Grateful", "Proactive", "Focused", "Patient", "Empowered"
-];
+/**
+ * An array of even numbers from 2-100
+ */
+const evenNumbers = Array.from({ length: 50 }, (_, i) => i * 2 + 2); // An array of even
 
-// Generate a random username
-function generateRandom() {
-    const randomNoun = userNouns[Math.floor(Math.random() * userNouns.length)];
+/**
+ * An array of odd numbers from 1-100
+ */
+const oddNumbers = numberArray.filter(number => number % 2 !== 0); // An array of odd numbers
+
+
+/**
+ * Creates a Username consisting of an adjective, a noun, a number (from 1-100) and another number (from 1-20)
+ * 
+ * @returns {string} Concatenates username and returns it as a string
+ */
+function generateRandomName() { 
+    /**
+     * Picks a random adjective from the array of adjectives
+    */
     const randomAdjective = userAdjectives[Math.floor(Math.random() * userAdjectives.length)];
-    const randomNumberTo20 = numberArrayTo20[Math.floor(Math.random() * numberArrayTo20.length)];
+
+    /**
+     * Picks a random noun from the array of nouns
+    */
+    const randomNoun = userNouns[Math.floor(Math.random() * userNouns.length)];
+
+    /**
+     * Picks a random number from the array of numbers from 1-100
+    */
     const randomNumber = numberArray[Math.floor(Math.random() * numberArray.length)];  
 
+    /**
+     * Picks a random number from the array of numbers from 1-20
+    */
+    const randomNumberTo20 = numberArrayTo20[Math.floor(Math.random() * numberArrayTo20.length)];
+
+    // Generates a random username by concatenating the random adjective, noun, number (1-100) and another number (1-20)
     return `${randomAdjective}_${randomNoun}${randomNumber}${randomNumberTo20}`;
 }
 
-// Function that generates a username that starts with "user" and ends with random numbers
-function generateUser() {
-    const randomEvenNumber = evenNumbers[Math.floor(Math.random() * evenNumbers.length)];
+
+/**
+ * Creates a Username consisting of an string "User", a random number(1-100), even number (from 2-100) and odd number (from 1-100)
+ * 
+ * @returns {string} Concatenates the username and returns it as a string
+ */
+function generateRandomUser() {
+    /**
+     * Picks a random number from the array of numbers from 1-100
+    */
     const randomNumber = numberArray[Math.floor(Math.random() * numberArray.length)];  
+
+    /**
+     * Picks a random even number from the array of even numbers
+    */
+    const randomEvenNumber = evenNumbers[Math.floor(Math.random() * evenNumbers.length)];
+
+    /**
+     * Picks a random odd number from the array of odd numbers
+    */
     const randomOddNumber = oddNumbers[Math.floor(Math.random() * oddNumbers.length)];
 
+    // Generates a username that starts with "user" and ends with random numbers
     return `User${randomNumber}${randomEvenNumber}${randomOddNumber}`;
 }
 
-// Function that ensures that a username is unique
+/**
+ * Creates a Username consisting of an adjective and a noun
+ * 
+ * @returns {string} Concatenates username and returns it as a string
+ */
+function generateFormalName() {
+    /**
+     * Picks a random noun from the array of nouns
+    */
+    const randomNoun = userNouns[Math.floor(Math.random() * userNouns.length)];
+
+    /**
+     * Picks a random adjective from the array of adjectives
+    */
+    const randomAdjective = userAdjectives[Math.floor(Math.random() * userAdjectives.length)];
+
+     // Return a random username consisting of an adjective and a noun
+    return `${randomAdjective}_${randomNoun}`;
+}
+
+
+
+/**
+ * Creates a Username consisting of an adjective and a profession
+ * 
+ * @returns {string} Concatenates username and returns it as a string
+ */
+function generateProName() {
+    /**
+     * Picks a random adjective from the array of adjectives
+    */
+    const randomAdjective = userAdjectives[Math.floor(Math.random() * userAdjectives.length)];
+    
+    /**
+     * Picks a random profession from the array of professions
+    */
+    const randomProfession = userProfessions[Math.floor(Math.random() * userProfessions.length)];
+    
+    // Return a random username consisting of an adjective and a profession
+    return `${randomAdjective}_${randomProfession}`;
+}
+
+/**
+ * Creates a Username consisting of an adjective, a profession, a number(1-100) and another number(1-20)
+ * 
+ * @returns {string} Concatenates username and returns it as a string
+ */
+function generateUniquePro() {
+    /**
+     * Picks a random adjective from the array of adjectives
+    */
+    const randomAdjective = userAdjectives[Math.floor(Math.random() * userAdjectives.length)];
+    
+    /**
+     * Picks a random profession from the array of professions
+    */
+    const randomProfession = userProfessions[Math.floor(Math.random() * userProfessions.length)];
+
+    /**
+     * Picks a random number from the array of numbers from 1-100
+    */
+    const randomNumber = numberArray[Math.floor(Math.random() * numberArray.length)];  
+
+    /**
+     * Picks a random number from the array of numbers from 1-20
+    */
+    const randomNumberTo20 = numberArrayTo20[Math.floor(Math.random() * numberArrayTo20.length)];
+    
+    // Return a random username consisting of a random adjective, a profession, number (1-100) and another number (1-20)
+    return `${randomAdjective}_${randomProfession}${randomNumber}${randomNumberTo20}`;
+}
+    
+
+/**
+ * Ensures that the generated username is not already in use
+ * 
+ * @param {string} username - The generated username
+ * 
+ * @returns {string} Concatenates the username and returns it as a string
+ */
     function generateUniqueUsername(username) {
-        const existingUsernames = [...userNouns,...userAdjectives, "user"];
+        /** 
+         * An array of usernames already existing
+        */
+        const existingUsernames = [...userNouns,...userAdjectives,...numberArray,...numberArrayTo20,...oddNumbers,...evenNumbers, "User"];
         if (existingUsernames.includes(username)) {
-            return generateUniqueUsername(generateRandom());
-        } else {
-            return username;
+
+            return 
+                generateUniqueUsername(generateRandomName()); // If the username is already taken, generate a new one (this is for the random name generator)
+                generateUniqueUsername(generateRandomUser()); // If the username is already taken, generate a new one (this is for the user function)
+                generateUniqueUsername(generateFormalName()); // If the username is already taken, generate a new one (this is for the formal name generator)
+                generateUniqueUsername(generateProName()); // If the username is already taken, generate a new one (this is for the profession name generator)
+                generateUniqueUsername(generateUniquePro()); // If the username is already taken, generate a new one (this is for the unique profession name function)
+        } 
+        else {
+            return username; // Return the username if it's not in the existing usernames array
         }
     }
-
-    // Function that imports a particular array from the data.json JSON file
-
-    // const fs = require("fs");
-
-    // function importArray(filePath) {
-    //     return new Promise((resolve, reject) => {
-    //         fs.readFile(filePath, "utf8", (err, data) => {
-    //             if (err) {
-    //                 reject(err); // Reject the Promise if there's an error
-    //             } else {
-    //                 resolve(JSON.parse(data)); // Resolve the Promise with parsed JSON data
-    //             }
-    //         });
-    //     });
-    // }
-    
-    // Using the function with data.json
-    // importArray("data.json")
-    //     .then((userNouns) => {
-    //         console.log("Array from data.json:", userNouns);
-    //     })
-    //     .catch((error) => {
-    //         console.error("Error reading data.json:", error.message);
-    //     });
-    
-                
-    
-
-    // console.log(generateUser());
-    console.log(generateUniqueUsername(generateRandom()));
-    // console.log(generateUniqueUsername(generateUser()));
-    // // console.log(readArray());
-
-
-
-
-    // Read the JSON file
-    // fs.readFile('data.json', 'utf8', (err, data) => {
-    //     if (err) {
-    //         console.error('Error reading the file:', err);
-    //         return;
-    //     }
-    
-    //     // Parse the JSON data
-    //     const jsonData = JSON.parse(data);
-    //     const nouns = jsonData.userNouns;
-    //     const adjectives = jsonData.userAdjectives;
     
         
 
-        // A function that concatenates the two array items
-    //     function generateRandom() {
-    //     // Get a random item from the array
-    //     const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
-    //     const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-    //     // const randomUsername = `${randomAdjective}_${randomNoun}`;
-    //     const randomNumberTo20 = numberArrayTo20[Math.floor(Math.random() * numberArrayTo20.length)];
-    //     const randomNumber = numberArray[Math.floor(Math.random() * numberArray.length)];  
     
-    //     return 
-    // }
-    // });
+// All Outputs
 
-        // Output the random item
-        // console.log(concatenateItems(randomAdjective, randomNoun));
-    
-    console.log(generateUser());
+// Outputs a random username consisting of an string "User", a random number(1-100), even number (from 2-100) and odd number (from 1-100) 20 times
+// console.log(generateRandomName());
 
+// // Outputs a random username that starts with "user" and ends with random numbers
+// console.log(generateRandomUser());
+
+// // Outputs a random username consisting of an adjective and a noun
+// console.log(generateFormalName());
+
+// // Outputs a random username consisting of an adjective and a profession
+// console.log(generateProName());
+
+// // Outputs a random username consisting of an adjective, a profession
+// console.log(generateUniquePro());
+
+// // Testing the unique username generation (randomname)
+// console.log(generateUniqueUsername(generateRandomName()));
+
+// // Testing the unique username generation (user)
+// console.log(generateUniqueUsername(generateRandomUser()));
+
+// // Testing the unique username generation (formal)
+// console.log(generateUniqueUsername(generateFormalName()));
+
+// // Testing the unique username generation (profession)
+// console.log(generateUniqueUsername(generateProName()));
+
+
+
+// All Exports
 
 // Export the functions so they can be used in other files
 module.exports = {
-    numberArray,
-    oddNumbers,
-    evenNumbers,
-    generateRandom,
-    generateUser,
+    generateRandomName,
+    generateRandomUser,
+    generateFormalName,
+    generateProName,
+    generateUniquePro,
     generateUniqueUsername
 };
